@@ -12,8 +12,25 @@
 */
 
 
+Route::get('/', 'PagesController@welcome');
+Route::get('/cars', 'PagesController@cars');
+Route::get('/brands', 'PagesController@brands');
+Route::get('/workers', 'PagesController@workers');
+Route::get('/clients', 'PagesController@clients');
+Route::get('/orders_cars', 'PagesController@orders_cars');
+Route::get('/workers_orders', 'PagesController@workers_orders');
 
-Route::get('/form', 'FormController@index');
-Route::post('/', 'FormController@inde');
-Route::get('/', 'FormController@ind');
-Route::get('/list', 'ListController@index');
+Route::get('/client', 'FormClientsController@client');
+Route::post('/clients', 'FormClientsController@form');
+
+Route::get('/worker', 'FormWorkersController@worker');
+Route::post('/workers', 'FormWorkersController@form');
+
+Route::get('/brand', 'FormBrandsController@brand');
+Route::post('/brands', 'FormBrandsController@form');
+
+Route::get('/car', 'FormCarsController@car');
+Route::post('/cars', 'FormCarsController@form');
+
+Route::get('/order', 'FormOrdersController@order');
+Route::post('/orders_cars', 'FormOrdersController@form');
